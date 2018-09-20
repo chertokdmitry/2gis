@@ -2,9 +2,8 @@
 
 class Index extends Model
 {
-
-    public function getAll() 
+    public function main() 
     {
-
+        
     }
 }

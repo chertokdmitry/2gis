@@ -6,14 +6,10 @@ class V1Controller extends Controller
     {
         $this->model = new V1;
         
-        if(App::gi()->uri->filter) {
-            return $this->model->getAll(true);
-        }
-        
-        if(App::gi()->uri->id) {
+        if(App::gi()->uri->id && !App::gi()->uri->filter) {
             return $this->model->getItem();
         } else {
-        return $this->model->getAll();
+            return $this->model->getAll();
         }
     }
 }
